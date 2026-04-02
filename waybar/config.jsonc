@@ -60,7 +60,7 @@
   "pulseaudio": {
     "format": "{volume}% <span size='16pt' rise='-3pt'>{icon}</span>",
     "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "",
+    "format-muted": "Muted <span size='18pt' rise='-3pt'></span>",
     "format-icons": {
       "alsa_output.pci-0000_00_1f.3.analog-stereo": "󰕾",
       "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "󰝟",
@@ -109,7 +109,7 @@
     "format": "{ifname}",
     "format-wifi": "{essid}  <span size='16pt' rise='-3pt'></span>",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "Disconnected  <span size='16pt' rise='-3pt'></span> ", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
