@@ -1,0 +1,72 @@
+/* --- UNIVERSAL FLAT OVERRIDE --- */
+
+:root {
+    /* Force everything to the same surface color */
+    --ytmusic-background: {{colors.surface.default.hex}} !important;
+    --ytmusic-player-page-background: {{colors.surface.default.hex}} !important;
+    --ytmusic-nav-bar-background: {{colors.surface.default.hex}} !important;
+    
+    /* Variable Nuke: Make all internal dividers match the background */
+    --yt-spec-divider: {{colors.surface.default.hex}} !important;
+    --ytmusic-divider: {{colors.surface.default.hex}} !important;
+    --yt-spec-10-percent-layer: transparent !important;
+    --yt-spec-white-alpha-10: transparent !important;
+    --yt-spec-white-alpha-20: transparent !important;
+}
+
+/* 1. Flatten the Homepage & Remove Top Gradients */
+ytmusic-browse-response,
+#background.ytmusic-browse-response,
+.background-gradient.ytmusic-browse-response {
+    background-color: {{colors.surface.default.hex}} !important;
+    background-image: none !important; /* This kills the 'line-like' gradients */
+}
+
+/* 2. Seamless Sidebar (The horizontal lines killer) */
+ytmusic-guide-renderer,
+#guide-content.ytmusic-app,
+#guide-wrapper.ytmusic-app {
+    background-color: {{colors.surface.default.hex}} !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Target the sections but DON'T use display:none (so icons stay) */
+ytmusic-guide-section-renderer {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* Kill the literal divider elements */
+v-yt-paper-divider,
+tp-yt-paper-divider,
+.separator.ytmusic-guide-section-renderer {
+    border: none !important;
+    background-color: transparent !important;
+    height: 0 !important;
+    display: block !important; /* Keep it in the DOM but invisible */
+    visibility: hidden !important;
+}
+
+/* 3. Top Nav & Bottom Player Bar */
+ytmusic-nav-bar,
+ytmusic-player-bar,
+#nav-bar-background.ytmusic-app-layout {
+    background-color: {{colors.surface.default.hex}} !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 4. Search Bar Fix */
+ytmusic-search-box {
+    --ytmusic-search-background: {{colors.surface_container_high.default.hex}} !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 5. Sidebar Active Item */
+ytmusic-guide-entry-renderer[active] tp-yt-paper-item {
+    background-color: {{colors.secondary_container.default.hex}} !important;
+    border-radius: 12px !important;
+}

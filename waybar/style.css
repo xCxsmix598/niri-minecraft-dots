@@ -1,0 +1,57 @@
+@import "colors.css";
+
+* {
+  margin: 0;
+  background-color: transparent;
+  font-family: Mojangles, JetBrainsMono Nerd Font Mono;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+}
+
+window#waybar {
+  background-color: @surface;
+  border-bottom: solid 2px @primary;
+}
+
+#pulseaudio,
+#workspaces,
+#clock,
+#backlight,
+#mpris,
+#network,
+#custom-notification {
+  background-color: @secondary;
+  color: @on_secondary;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  border-radius: 8px 8px 8px 8px;
+  border: 3px solid @primary;
+}
+
+#workspaces {
+  border-radius: 8px 8px 8px 8px;
+}
+
+#workspaces button {
+  border: solid 3px @on_secondary;
+  border-radius: 12px;
+  padding: 2px 6px 2px 6px;
+  margin: 2px;
+  background: transparent;
+  transition: 0.5s;
+  color: transparent;
+}
+
+#workspaces button.active {
+  background-color: @on_secondary;
+  transition: 0.5s;
+  border-radius: 24px;
+}
+
+tooltip {
+  background-color: @surface;
+  border: 3px solid @primary;
+}

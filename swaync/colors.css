@@ -1,0 +1,14 @@
+@define-color base #1a110f;
+@define-color mantle #271d1b;
+@define-color crust #322825;
+
+@define-color text #f1dfdb;
+@define-color subtext0 #d8c2bd;
+
+@define-color surface0 #140c0a;
+@define-color surface1 #231917;
+@define-color surface2 #271d1b;
+
+@define-color accent #ffb4a2;
+@define-color accent_text #561f11;
+@define-color red #ffb4ab;

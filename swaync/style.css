@@ -1,0 +1,101 @@
+@import url("colors.css");
+
+/* ===================== */
+/* Main Window           */
+/* ===================== */
+.control-center {
+  background: @base;
+  border: 2px solid @accent;
+  border-radius: 12px;
+  color: @text;
+}
+
+/* ===================== */
+/* Notifications         */
+/* ===================== */
+.notification {
+  background: @base;
+  border-radius: 12px;
+  border: 2px solid @accent;
+  margin: 6px;
+  padding: 10px;
+  color: @text;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Text */
+.notification-content {
+  color: @text;
+}
+
+.notification .summary {
+  font-weight: 600;
+  color: @text;
+}
+
+.notification .body {
+  color: @subtext0;
+}
+
+/* Hover */
+.notification-default-action:hover {
+  background: @surface1;
+}
+
+/* Critical */
+.critical {
+  border: 1px solid @red;
+}
+
+/* ===================== */
+/* Progress Bar (VOLUME) */
+/* ===================== */
+
+/* Base (track) */
+.notification progressbar trough,
+.notification .progressbar trough,
+.notification scale trough {
+  background: @surface1;
+  border-radius: 999px;
+  min-height: 8px;
+}
+
+/* Fill (actual volume) */
+.notification progressbar progress,
+.notification .progressbar progress,
+.notification scale highlight {
+  background: @accent;
+  border-radius: 999px;
+}
+
+/* Smooth animation */
+.notification progressbar progress,
+.notification scale highlight {
+  transition: all 150ms ease-in-out;
+}
+
+/* Muted state (if you pass class=muted) */
+.notification.muted progressbar progress,
+.notification.muted scale highlight {
+  background: @red;
+}
+
+/* ===================== */
+/* Widgets               */
+/* ===================== */
+.widget-title {
+  color: @accent;
+  font-weight: bold;
+}
+
+.widget-dnd {
+  color: @surface0;
+}
+
+.widget-dnd>switch {
+  background-color: @surface2;
+}
+
+.widget-dnd>switch:checked {
+  background: @accent;
+}

@@ -1,0 +1,55 @@
+[config.wallpaper]
+command = "awww img --transition-type center --transition-fps 60 {{ image }}"
+set = true
+
+
+[templates.waybar]
+input_path = './templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+#post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.niri]
+input_path = './templates/niri-colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+post_hook = 'niri msg action load-config-file'
+
+[templates.kitty]
+input_path = './templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+
+[templates.gtk3]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.wofi]
+input_path = './templates/colors-wofi.css'
+output_path = '~/.config/wofi/colors-wofi.css'
+
+[templates.neovim]
+input_path  = "~/.config/matugen/templates/neovim.lua"
+output_path = "~/.config/nvim/lua/matugen/palette.lua"
+post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/swaync.css'
+output_path = '~/.config/swaync/colors.css'
+post_hook = 'swaync-client -R && swaync-client -rs'
+
+[templates.vesktop]
+input_path = './templates/midnight-discord.css'
+output_path = '~/.config/equibop/themes/midnight-discord.css'
+
+[templates.ytm]
+input_path = "./templates/ytm.css"
+output_path = "~/Downloads/ytm.css"
+
+[templates.btop]
+input_path = './templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
