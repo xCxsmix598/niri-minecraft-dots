@@ -4,15 +4,11 @@
   margin: 0;
   background-color: transparent;
   font-family: Mojangles, JetBrainsMono Nerd Font Mono;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 1px;
-  margin-bottom: 2px;
 }
 
 window#waybar {
   background-color: @surface;
-  border-bottom: solid 2px @primary;
+  border-bottom: solid 1px @primary;
 }
 
 #pulseaudio,
@@ -22,36 +18,34 @@ window#waybar {
 #mpris,
 #network,
 #custom-notification {
-  background-color: @secondary;
-  color: @on_secondary;
+  background-color: @primary_container;
+  color: @on_primary_container;
   padding-left: 16px;
   padding-right: 16px;
   font-size: 14px;
-  border-radius: 8px 8px 8px 8px;
-  border: 3px solid @primary;
-}
-
-#workspaces {
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 12px 12px 12px 12px;
+  border: 2px solid @primary;
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 
 #workspaces button {
-  border: solid 3px @on_secondary;
-  border-radius: 12px;
-  padding: 2px 6px 2px 6px;
-  margin: 2px;
+  border: solid 2px @primary;
+  border-radius: 8px;
+  padding: 0px 4px 0px 4px;
+  margin: 5px;
   background: transparent;
-  transition: 0.5s;
+  transition: 0.2s linear;
   color: transparent;
 }
 
 #workspaces button.active {
-  background-color: @on_secondary;
-  transition: 0.5s;
+  background-color: @primary;
+  transition: 0.2s linear;
   border-radius: 24px;
 }
 
 tooltip {
   background-color: @surface;
-  border: 3px solid @primary;
+  border: 2px solid @primary;
 }

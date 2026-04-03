@@ -35,7 +35,7 @@
 
   @define-color on_secondary_fixed #2c1510;
 
-  @define-color on_secondary_fixed_variant #5d3f38;
+  @define-color on_secondary_fixed_variant #5d4038;
 
   @define-color on_surface #f1dfdb;
 
@@ -65,7 +65,7 @@
 
   @define-color secondary #e7bdb3;
 
-  @define-color secondary_container #5d3f38;
+  @define-color secondary_container #5d4038;
 
   @define-color secondary_fixed #ffdad2;
 
@@ -73,7 +73,7 @@
 
   @define-color shadow #000000;
 
-  @define-color source_color #6c4339;
+  @define-color source_color #952c12;
 
   @define-color surface #1a110f;
 

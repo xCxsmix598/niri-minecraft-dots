@@ -1,5 +1,5 @@
 [config.wallpaper]
-command = "awww img --transition-type center --transition-fps 60 {{ image }}"
+command = "awww img --transition-type any --transition-fps 60 {{ image }}"
 set = true
 
 
