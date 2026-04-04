@@ -1,14 +1,14 @@
-@define-color base #1a110f;
-@define-color mantle #271d1b;
-@define-color crust #322825;
+@define-color base #101510;
+@define-color mantle #1c211c;
+@define-color crust #262b26;
 
-@define-color text #f1dfdb;
-@define-color subtext0 #d8c2bd;
+@define-color text #dfe4dc;
+@define-color subtext0 #c1c9bf;
 
-@define-color surface0 #140c0a;
-@define-color surface1 #231917;
-@define-color surface2 #271d1b;
+@define-color surface0 #0b0f0b;
+@define-color surface1 #181d18;
+@define-color surface2 #1c211c;
 
-@define-color accent #ffb4a2;
-@define-color accent_text #561f11;
+@define-color accent #97d5a4;
+@define-color accent_text #00391a;
 @define-color red #ffb4ab;

@@ -13,12 +13,14 @@
     "clock"
   ],
   "modules-right": [
-    "mpris",
-    "backlight",
+    "custom/music",
+    //"backlight",
     "pulseaudio",
     "network",
-    "custom/notification"
+    "custom/notification",
+    "custom/tray"
   ],
+  "name": "main",
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -33,8 +35,8 @@
     }
   },
   "clock": {
-    "format": "{:%I:%M %p} <span size='16pt' rise='-3pt'>󰥔</span>",
-    "format-alt": "{:%A, %B %d, %Y (%R)} <span size='16pt' rise='-3pt'> </span>",
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%A, %B %d, %Y (%I:%M %p)} <span size='16pt' rise='-3pt'> </span>",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -91,25 +93,22 @@
     ],
     "tooltip": false
   },
-  "mpris": {
-    "format": "{title} - {artist} <span size='16pt' rise='-3pt'>{player_icon}</span>",
-    "format-paused": "<i>{title} - {artist}</i> <span size='16pt' rise='-3pt'>{status_icon}</span>",
-    "max-length": 30,
-    "player-icons": {
-      "default": "▶",
-      "mpv": "🎵"
-    },
-    "status-icons": {
-      "paused": "⏸"
-    }
-    // "ignored-players": ["firefox"]
+  "custom/music": {
+    "format": "{}",
+    "exec": "python ~/.config/waybar/marquee.py",
+    "max-length": 27,
+    "min-length": 27,
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "toolitp": false
   },
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "{essid}  <span size='16pt' rise='-3pt'></span>",
+    "format-wifi": "<span size='16pt' rise='-3pt'></span>",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "Disconnected  <span size='16pt' rise='-3pt'></span> ", //An empty format will hide the module.
+    "format-disconnected": "<span size='16pt' rise='-3pt'></span>", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -136,5 +135,17 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    }
+  },
+  "custom/tray": {
+    "format": "<span size='16pt' rise='-3'></span>",
+    "on-click": "python /home/xyphe/.config/waybar/scripts/tray.py"
   }
 }

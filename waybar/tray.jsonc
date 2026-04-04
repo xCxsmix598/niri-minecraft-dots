@@ -1,0 +1,24 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 50, // Waybar height (to be removed for auto height)
+  //"width": 1920, // Waybar width
+  "margin-top": 0,
+  "margin-right": 0,
+  "spacing": 5, // Gaps between modules (4px)
+  // Choose the order of the modules
+  "modules-right": [
+    "tray"
+  ],
+  "exclusive": false,
+  "name": "tray",
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    }
+  }
+}
