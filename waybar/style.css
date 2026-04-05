@@ -11,10 +11,6 @@
   border-bottom: solid 1px @primary;
 }
 
-.tray {
-  background-color: transparent;
-}
-
 #pulseaudio,
 #workspaces,
 #clock,
@@ -22,8 +18,7 @@
 #custom-music,
 #network,
 #custom-notification,
-#custom-tray,
-#tray {
+#custom-tray {
   background-color: @primary_container;
   color: @on_primary_container;
   padding-left: 16px;
@@ -33,6 +28,10 @@
   border: 1px solid @primary;
   margin-top: 4px;
   margin-bottom: 8px;
+}
+
+#tray {
+  opacity: 0;
 }
 
 #workspaces button {
@@ -51,8 +50,7 @@
   border-radius: 24px;
 }
 
-tooltip,
-#tray menu {
+tooltip {
   background-color: @surface;
   border: 2px solid @primary;
 }

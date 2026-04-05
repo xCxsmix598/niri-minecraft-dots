@@ -137,8 +137,10 @@
     "escape": true
   },
   "tray": {
-    "icon-size": 21,
-    "spacing": 10,
+    "max-length": 1,
+    "icon-size": 1,
+    "spacing": 0,
+    "format": "none",
     "icons": {
       "blueman": "bluetooth",
       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -146,8 +148,8 @@
   },
   "custom/tray": {
     "tooltip": false,
-    "signal": 8,
-    "exec": "python /home/xyphe/.config/waybar/scripts/tray_indicator.py",
-    "on-click": "python /home/xyphe/.config/waybar/scripts/tray.py"
+    "interval": 1,
+    "exec": "python /home/xyphe/.config/waybar/tray/tray_indicator.py",
+    "on-click": "python /home/xyphe/.config/waybar/tray/tray.py"
   }
 }
