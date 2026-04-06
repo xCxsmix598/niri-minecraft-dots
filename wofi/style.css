@@ -35,7 +35,11 @@
   padding-left: 15px;
 }
 
+#text:selected {
+  color: @on_primary;
+}
 
 #entry:selected {
   border-radius: 24px;
+  background-color: @primary;
 }
