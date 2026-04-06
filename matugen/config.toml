@@ -28,7 +28,7 @@ input_path = './templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
 
 [templates.wofi]
-input_path = './templates/colors-wofi.css'
+input_path = './templates/colors.css'
 output_path = '~/.config/wofi/colors-wofi.css'
 
 [templates.neovim]
@@ -38,7 +38,7 @@ post_hook = 'pkill -SIGUSR1 nvim'
 
 [templates.swaync]
 input_path = '~/.config/matugen/templates/swaync.css'
-output_path = '~/.config/swaync/colors.css'
+output_path = '~/.config/swaync/matugen/matugen-swaync.css'
 post_hook = 'swaync-client -R && swaync-client -rs'
 
 [templates.vesktop]

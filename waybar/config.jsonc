@@ -1,24 +1,25 @@
 // -*- mode: jsonc -*-
 {
   "layer": "top", // Waybar at top layer
-  "position": "top", // Waybar position (top|bottom|left|right)
+  "position": "bottom", // Waybar position (top|bottom|left|right)
   "height": 28, // Waybar height (to be removed for auto height)
   // "width": 1800, // Waybar width
   "spacing": 5, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "niri/workspaces"
+    "custom/launcher"
   ],
   "modules-center": [
-    "clock"
+    "niri/workspaces"
   ],
   "modules-right": [
     "custom/music",
     //"backlight",
-    "pulseaudio",
+    "group/volume",
     "network",
+    "clock",
     "custom/notification",
-    "custom/tray"
+    "group/tray1"
   ],
   "name": "main",
   "niri/workspaces": {
@@ -49,7 +50,8 @@
         "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
+      },
+      "tooltip": true
     },
     "actions": {
       "on-click-right": "mode",
@@ -59,8 +61,20 @@
       "on-scroll-down": "shift_down"
     }
   },
+  "group/volume": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false,
+      "click-to-reveal": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
   "pulseaudio": {
-    "format": "{volume}% <span size='16pt' rise='-3pt'>{icon}</span>",
+    "format": "<span size='16pt' rise='-3pt'>{icon}</span> {volume}%",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "Muted <span size='18pt' rise='-3pt'></span>",
     "format-icons": {
@@ -82,7 +96,14 @@
     "on-click": "pavucontrol",
     "ignored-sinks": [
       "Easy Effects Sink"
-    ]
+    ],
+    "tooltip": false
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 150,
+    "orientation": "horizontal",
+    "format": "{volume}%"
   },
   "backlight": {
     "device": "intel_backlight",
@@ -91,6 +112,22 @@
       "󰃞",
       "󰃠"
     ],
+    "tooltip": false
+  },
+  "group/tray1": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/expand", // First element is the "group leader" and won't ever be hidden
+      "tray"
+    ]
+  },
+  "custom/expand": {
+    "format": "<span size='18pt' rise='-3pt'></span>",
     "tooltip": false
   },
   "custom/music": {
@@ -137,19 +174,16 @@
     "escape": true
   },
   "tray": {
-    "max-length": 1,
-    "icon-size": 1,
-    "spacing": 0,
-    "format": "none",
+    "icon-size": 28,
+    "spacing": 5,
     "icons": {
       "blueman": "bluetooth",
       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
     }
   },
-  "custom/tray": {
-    "tooltip": false,
-    "interval": 1,
-    "exec": "python /home/xyphe/.config/waybar/tray/tray_indicator.py",
-    "on-click": "python /home/xyphe/.config/waybar/tray/tray.py"
+  "custom/launcher": {
+    "format": "<span size='18pt' rise='-3pt'>󰣇</span>",
+    "on-click": "killall -9 wofi; wofi",
+    "tooltip": false
   }
 }

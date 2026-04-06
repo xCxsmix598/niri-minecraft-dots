@@ -132,10 +132,10 @@ include "./colors.kdl"
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
+spawn-sh-at-startup "echo off > /home/xyphe/.config/waybar/tray/tray.state"
 spawn-sh-at-startup "waybar & disown"
 spawn-sh-at-startup "awww-daemon"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-sh-at-startup "echo off > /home/xyphe/.config/waybar/tray/tray.state"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -235,6 +235,11 @@ window-rule {
 layer-rule {
   match namespace="waybar"
   place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="wofi"
+  geometry-corner-radius 24
 }
 
 // Example: enable rounded corners for all windows.

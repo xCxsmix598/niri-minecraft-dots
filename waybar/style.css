@@ -8,7 +8,7 @@
 
 .main {
   background-color: @surface;
-  border-bottom: solid 1px @primary;
+  border-top: solid 1px @primary;
 }
 
 #pulseaudio,
@@ -18,7 +18,8 @@
 #custom-music,
 #network,
 #custom-notification,
-#custom-tray {
+#custom-launcher,
+#tray {
   background-color: @primary_container;
   color: @on_primary_container;
   padding-left: 16px;
@@ -26,12 +27,23 @@
   font-size: 14px;
   border-radius: 12px 12px 12px 12px;
   border: 1px solid @primary;
-  margin-top: 4px;
-  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 
-#tray {
-  opacity: 0;
+#custom-expand {
+  padding-left: 1px;
+  padding-top: 4px;
+}
+
+#tray1 {
+  background-color: transparent;
+  color: @on_primary_container;
+  padding-left: 2px;
+  padding-right: 5px;
+  font-size: 14px;
+  border-radius: 12px 12px 12px 12px;
+  border: none;
 }
 
 #workspaces button {
@@ -50,7 +62,35 @@
   border-radius: 24px;
 }
 
-tooltip {
+tooltip,
+#tray menu {
   background-color: @surface;
   border: 2px solid @primary;
+}
+
+#pulseaudio-slider {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-color: @primary;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 150px;
+  border-radius: 5px;
+  background: @on_surface;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: @primary;
 }
