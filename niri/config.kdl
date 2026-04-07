@@ -203,6 +203,11 @@ window-rule {
   block-out-from "screencast"
 }
 
+window-rule{
+  match app-id="BeeperTexts"
+  block-out-from "screencast"
+}
+
 window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.

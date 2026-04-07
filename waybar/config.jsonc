@@ -7,7 +7,8 @@
   "spacing": 5, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "custom/launcher"
+    "custom/launcher",
+    "custom/archbtw"
   ],
   "modules-center": [
     "niri/workspaces"
@@ -182,7 +183,7 @@
     }
   },
   "custom/launcher": {
-    "format": "<span size='18pt' rise='-3pt'>󰣇</span>",
+    "format": "<span size='18pt' rise='-3pt'>󰣇</span>  i use arch btw",
     "on-click": "killall -9 wofi; wofi",
     "tooltip": false
   }
