@@ -11,4 +11,4 @@ allow_images=true
 # Hides the standard wofi header for a cleaner look
 no_actions=true
 hide_scroll=true
-image_size=32
+image_size=48
