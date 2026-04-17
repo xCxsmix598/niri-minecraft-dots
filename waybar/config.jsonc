@@ -27,22 +27,10 @@
   //  "group/tray1"
   //],
   "name": "main",
-  "niri/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      // Named workspaces
-      // (you need to configure them in niri)
-      "browser": "",
-      "discord": "",
-      "chat": "<b></b>",
-      // Icons by state
-      "active": "",
-      "default": ""
-    }
-  },
+  "niri/workspaces": {},
   "clock": {
-    "format": "<span size='16pt' rise='-3pt'></span>  {:%I:%M %p}",
-    "format-alt": "{:%A, %B %d, %Y (%I:%M %p)} <span size='16pt' rise='-3pt'> </span>",
+    "format": "{:%I:%M %p}  <span size='20pt' rise='-4pt'></span>",
+    "format-alt": "{:%A, %B %d, %Y (%I:%M %p)} <span size='20pt' rise='-4pt'></span>",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -79,7 +67,7 @@
     ]
   },
   "pulseaudio": {
-    "format": "<span size='16pt' rise='-3pt'>{icon}</span> {volume}%",
+    "format": "<span size='18pt' rise='-3pt'>{icon}</span>  {volume}%",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "Muted <span size='18pt' rise='-3pt'></span>",
     "format-icons": {
@@ -112,7 +100,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "{percent}% <span size='16pt' rise='-3pt'>{icon}</span>",
+    "format": "{percent}% <span size='20pt' rise='-4pt'>{icon}</span>",
     "format-icons": [
       "󰃞",
       "󰃠"
@@ -132,7 +120,7 @@
     ]
   },
   "custom/expand": {
-    "format": "<span size='18pt' rise='-3pt'></span>",
+    "format": "<span size='20pt' rise='-4pt'></span>",
     "tooltip": false
   },
   "custom/music": {
@@ -148,9 +136,9 @@
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "<span size='16pt' rise='-3pt'></span>",
+    "format-wifi": "<span size='20pt' rise='-4pt'></span>",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "<span size='16pt' rise='-3pt'></span>", //An empty format will hide the module.
+    "format-disconnected": "<span size='20pt' rise='-4pt'></span>", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -160,7 +148,7 @@
   },
   "custom/notification": {
     "tooltip": true,
-    "format": "<span size='16pt'>{icon}</span>",
+    "format": "<span size='20pt'>{icon}</span>",
     "format-icons": {
       "notification": "󱅫",
       "none": "󰂜",
@@ -187,7 +175,7 @@
     }
   },
   "custom/launcher": {
-    "format": "<span size='18pt' rise='-3pt'>󰣇</span>",
+    "format": "<span size='20pt' rise='-4pt'>󰣇</span>",
     "on-click": "killall -9 wofi; wofi",
     "tooltip": false
   }
